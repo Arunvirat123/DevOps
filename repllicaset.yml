@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: wipro-replicaset
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: wipro
+  template:
+    metadata:
+      name: new-replica
+      labels:
+        app: wipro
+    spec:
+      containers:
+        - name: arjun
+          image: nginx:1.14.2

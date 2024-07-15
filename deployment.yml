@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wipro-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nabeel
+  template:
+    metadata:
+      name: new-deployment
+      labels:
+        app: nabeel
+    spec:
+      containers:
+        - name: sravani
+          image: nginx:1.14.2
+          ports:
+            - containerPort: 80
